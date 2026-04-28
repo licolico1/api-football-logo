@@ -20,7 +20,7 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState<string>("All");
   
   useEffect(() => {
-    fetch("/api/logos")
+    fetch("/clubs.json")
       .then(res => res.json())
       .then((data: Club[]) => {
         setClubs(data);
@@ -83,13 +83,13 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
-          <h2 className="text-lg font-semibold text-blue-900 mb-2">API Access</h2>
+          <h2 className="text-lg font-semibold text-blue-900 mb-2">API / Data Access</h2>
           <p className="text-sm text-blue-800 mb-4">
-            You can access this logo dataset programmatically.
+            You can access this logo dataset programmatically directly from the static JSON file.
           </p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto text-green-400 flex items-center justify-between">
-            <code>GET {window.location.origin}/api/logos</code>
-            <a href="/api/logos" target="_blank" rel="noopener noreferrer" className="text-xs bg-gray-700 text-white px-3 py-1.5 rounded hover:bg-gray-600 transition-colors">
+            <code>GET {window.location.origin}/clubs.json</code>
+            <a href="/clubs.json" target="_blank" rel="noopener noreferrer" className="text-xs bg-gray-700 text-white px-3 py-1.5 rounded hover:bg-gray-600 transition-colors">
               View JSON
             </a>
           </div>
